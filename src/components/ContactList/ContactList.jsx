@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import {ContactItem} from './ContactItem';
 
-const ContactList = ({ contacts,filter }) => {
+export const ContactList = ({ contacts,filter,deleteContact }) => {
   return (
     <ul>
       {contacts.filter(contact=>contact.name.toLowerCase().includes(filter.toLowerCase()))
@@ -13,6 +13,7 @@ const ContactList = ({ contacts,filter }) => {
             <ContactItem
               key={id}
               contact={contact}
+              deleteContact={deleteContact}
               />
           );
         })}
@@ -23,4 +24,3 @@ ContactList.propTypes = {
   contacts: PropTypes.array.isRequired,
   filter:PropTypes.string.isRequired,
 };
-export default ContactList;
