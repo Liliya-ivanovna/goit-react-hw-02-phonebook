@@ -1,5 +1,7 @@
 import styled from '@emotion/styled'
-
+export const Wrapper=styled.div`
+display:flex;
+flex-direction:column;`
 export const Button = styled.button`
   padding: 10px;
   width:150px;
