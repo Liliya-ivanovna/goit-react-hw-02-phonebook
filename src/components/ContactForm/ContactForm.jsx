@@ -1,6 +1,6 @@
 
 import {Component} from 'react';
-import { Button,Label,Form,InputName,Wrapper } from "./ContactForm.styled"
+import { Button,Label,Form,InputName } from "./ContactForm.styled"
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
 
@@ -32,7 +32,7 @@ export class ContactForm extends Component{
   }
   render(){
     const {name,number}=this.state
-    return (<Wrapper>
+    return (<>
     <Form onSubmit={this.onHandleSubmit}>
     <Label>Name
         <InputName 
@@ -55,6 +55,6 @@ export class ContactForm extends Component{
   required
 />  </Label>
       <Button type='submit'>Add contact</Button></Form>
-        </Wrapper>)
+        </>)
   }
 }

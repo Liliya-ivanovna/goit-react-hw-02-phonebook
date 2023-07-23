@@ -1,10 +1,11 @@
 
 import PropTypes from 'prop-types';
 import {ContactItem} from './ContactItem';
+import {Ul} from './ContactList.styled';
 
 export const ContactList = ({ contacts,filter,deleteContact }) => {
   return (
-    <ul>
+    <Ul>
       {contacts.filter(contact=>contact.name.toLowerCase().includes(filter.toLowerCase()))
        
         .map(contact => {
@@ -17,7 +18,7 @@ export const ContactList = ({ contacts,filter,deleteContact }) => {
               />
           );
         })}
-    </ul>
+    </Ul>
   );
 };
 ContactList.propTypes = {

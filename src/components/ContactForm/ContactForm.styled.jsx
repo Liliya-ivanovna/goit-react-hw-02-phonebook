@@ -1,7 +1,5 @@
-import styled from '@emotion/styled'
-export const Wrapper=styled.div`
-display:flex;
-flex-direction:column;`
+import styled from '@emotion/styled';
+
 export const Button = styled.button`
   padding: 10px;
   width:150px;
@@ -17,6 +15,8 @@ export const Button = styled.button`
 export const Label = styled.label`
 font-weight: bold;
 font-size: 22px;
+display:flex;
+flex-direction:column;
 `
 export const Form = styled.form`
 max-width:500px;
