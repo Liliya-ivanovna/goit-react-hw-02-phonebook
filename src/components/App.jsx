@@ -13,8 +13,6 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-  number: ''
   };
 
 createUser=(contact)=>{
@@ -28,9 +26,18 @@ this.setState(prevState => {
   return ({ contacts: [contact, ...prevState.contacts] });
 });
 }
-onFilter = e => {
-  this.setState({ filter: e.target.value });
+
+addFilter=e=>this.setState({ filter: e.target.value });
+
+onFilter = () => {
+ const {contacts,filter}=this.state;
+ return contacts
+.filter(contact=>contact.name.toLowerCase()
+.includes(filter
+.toLowerCase())); 
+   
 };
+
 deleteContact=(id)=>{
 this.setState(prev =>{
   return{contacts:prev.contacts.filter((contact)=>contact.id!==id)}
@@ -44,9 +51,8 @@ render(){
    <ContactForm createUser={this.createUser} />
 
    <h2>Contacts</h2>
-   <Filter filter={filter} onFilter={this.onFilter}/>
-  <ContactList contacts={contacts}
-                 filter={filter}
+   <Filter filter={filter} addFilter={this.addFilter}/>
+  <ContactList contacts={this.onFilter(contacts)}
                  deleteContact={this.deleteContact}/>
     </Div>)
   };

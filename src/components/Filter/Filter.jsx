@@ -4,18 +4,16 @@ import {Input,Label} from './Filter.styled'
 
 export class Filter extends Component{
     static propTypes = {
-        onFilter: PropTypes.func.isRequired,
+        addFilter: PropTypes.func.isRequired,
         filter: PropTypes.string,
       };
 
-
-  render(){
-    const { filter, onFilter } = this.props;
-    return(<><Label>Find contacts by name
-        <Input type="text" 
+      render(){
+    const { filter, addFilter } = this.props;
+    return(<><Label>Find contacts by name <Input type="text" 
         name="filter"
         value={filter}
-        onChange={onFilter}
+        onChange={addFilter}
         /></Label></>
     )}
 }
